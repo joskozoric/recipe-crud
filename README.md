@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# RECIPE CRUD
 
 Za pokreniti projekt treba imati instaliran NodeJS, pozicionirati se u root folder projekta
 i iz komandne linije upisati naredbu "npm install", zatim unutar folder-a "server" također
