@@ -19,7 +19,7 @@ const SingleRecipe = ({ recipe, returnFromSingleRecipeView }) => {
         console.log("New recipe: " + name + " "+ description + " " + ingredients);
         let ingredientsArray = [];
         if(ingredients !== null && ingredients !== ""){
-            ingredientsArray = ingredients.split(" ");
+            ingredientsArray = ingredients.split(",");
         }
 
         const result = await axios.post(`/api/recipe/add`,{
@@ -27,6 +27,7 @@ const SingleRecipe = ({ recipe, returnFromSingleRecipeView }) => {
             description: description,
             ingredients: ingredientsArray
         });
+
         returnFromSingleRecipeView({});
     }
 
@@ -83,7 +84,7 @@ const SingleRecipe = ({ recipe, returnFromSingleRecipeView }) => {
             <form onSubmit={addSubmit}>
                 <input placeholder="Name" type="text"/>
                 <input placeholder="Description" type="text"/>
-                <input placeholder="Ingredients" type="text"/>
+                <input placeholder="Ingredients (coma seperated)" type="text"/>
                 <input type="submit" value="Submit" />
             </form>
         );

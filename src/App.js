@@ -38,17 +38,11 @@ const App = () => {
         setCurrentRecipe(selectedRecipe);
     }
 
-    const returnFromSingleRecipeView = () => {
-        setCurrentRecipe({});
-    }
-
     const updateFilters = async (nameFilterParam, ingredientFilterParam) => {
         console.log("Updated filters : " + nameFilterParam + " " + ingredientFilterParam);
         setNameFilter(nameFilterParam);
         setIngredientFilter(ingredientFilterParam);
         setCurrentPage(1);
-
-        console.log("Updated filters : " + nameFilter + ingredientFilter);
     }
 
     const newRecipe = () => {
@@ -61,7 +55,6 @@ const App = () => {
 
     const fetchRecipes = async () => {
         setLoading(true);
-        console.log("fetching recipes: " + currentPage + ", " + nameFilter);
         const result = await axios.post('/api/recipe', {
             pageSize: 5,
             pageNo: currentPage || 1,

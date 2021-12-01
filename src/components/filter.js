@@ -3,7 +3,6 @@ import React from "react";
 const Filter = ({ updateFilters }) => {
     const handleSubmit = async (event) => {
         event.preventDefault();
-        if(event.target)
         updateFilters(event.target[0].value, event.target[1].value);
     }
 
