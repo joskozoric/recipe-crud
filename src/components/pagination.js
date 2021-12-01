@@ -1,5 +1,4 @@
 import React from "react";
-import { useState } from 'react';
 
 const Pagination = ({ currentPage, noPages, changePage }) => {
     const onCLick = async (event) => {
@@ -9,11 +8,11 @@ const Pagination = ({ currentPage, noPages, changePage }) => {
 
     const pageButtons = [];
     for(var i = 0; i < noPages; i++){
-        pageButtons.push(<button disabled={currentPage == i + 1} type="button" id={i + 1} onClick={onCLick}> {i + 1} </button>);
+        pageButtons.push(<button class={currentPage == i + 1 || "disabled"} type="button" id={i + 1} onClick={onCLick}> {i + 1} </button>);
     }
 
     return (
-        <ul>
+        <ul class="pagination">
             {pageButtons}
         </ul>
     );

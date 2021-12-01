@@ -63,20 +63,22 @@ const SingleRecipe = ({ recipe, returnFromSingleRecipeView }) => {
                 <input placeholder="Name" type="text" defaultValue={recipe.name}/>
                 <input placeholder="Description" type="text" defaultValue={recipe.description}/>
                 <input placeholder="Ingredients" type="text" defaultValue={recipe.ingredients.toString()}/>
-                <input type="submit" value="Submit" />
+                <input class="btn" type="submit" value="Submit" />
             </form>
         );
     } else if (recipe._id !== undefined){
         return (
             <div>
-                <div>{recipe._id}</div>
-                <div>{recipe.name}</div>
-                <div>{recipe.description}</div>
-                <div>{recipe.ingredients.toString()}</div>
-                <div>{recipe.createdAt}</div>
-                <input type="button" onClick={() => returnFromSingleRecipeView({})} value="return"/>
-                <input type="button" onClick={deleteRecipe} value="delete"/>
-                <input type="button" onClick={() => setIsEdit(true)} value="edit"/>
+                <ul>
+                    <li class="list-group-item">ID: {recipe._id}</li>
+                    <li class="list-group-item">Name: {recipe.name}</li>
+                    <li class="list-group-item">Description: {recipe.description}</li>
+                    <li class="list-group-item">Ingredients: {recipe.ingredients.toString()}</li>
+                    <li class="list-group-item">Created TS: {recipe.createdAt}</li>
+                </ul>
+                <input class="btn" type="button" onClick={() => returnFromSingleRecipeView({})} value="Return to list"/>
+                <input class="btn" type="button" onClick={deleteRecipe} value="Delete recipe"/>
+                <input class="btn" type="button" onClick={() => setIsEdit(true)} value="Edit recipe"/>
             </div>
         );
     } else {
@@ -85,7 +87,7 @@ const SingleRecipe = ({ recipe, returnFromSingleRecipeView }) => {
                 <input placeholder="Name" type="text"/>
                 <input placeholder="Description" type="text"/>
                 <input placeholder="Ingredients (coma seperated)" type="text"/>
-                <input type="submit" value="Submit" />
+                <input class="btn" type="submit" value="Submit" />
             </form>
         );
     }

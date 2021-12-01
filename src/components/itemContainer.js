@@ -12,15 +12,15 @@ const ItemContainer = ({ recipes, loading, selectRecipe }) => {
 
     if(recipes && recipes.length !== 0){
         return (
-            <ul className="list-group mb-4">
+            <ul>
                 {recipes.map(recipe => (
-                    <li key={recipe._id} onClick={() => onClick(recipe._id)} className="list-group-item">{recipe.name}</li>
+                    <li class="list-group-item" key={recipe._id} onClick={() => onClick(recipe._id)} className="list-group-item">{recipe.name}</li>
                 ))}
             </ul>
         );
     } else {
         return (
-            <div>No items</div>
+            <div class="noItems">No items</div>
         );
     }
 

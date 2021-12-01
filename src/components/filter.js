@@ -8,9 +8,9 @@ const Filter = ({ updateFilters }) => {
 
     return (
         <form onSubmit={handleSubmit}>
-            <input placeholder="Name" type="text"/>
-            <input placeholder="Ingredient" type="text"/>
-            <input type="submit" value="Submit" />
+            <input class="recepie-name" placeholder="Name" type="text"/>
+            <input class="ing" placeholder="Ingredient" type="text"/>
+            <input class="submit btn"type="submit" value="Submit" />
         </form>
     );
 }

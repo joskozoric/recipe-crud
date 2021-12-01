@@ -5,6 +5,7 @@ import ItemContainer from "./components/itemContainer";
 import Filter        from "./components/filter";
 import Pagination    from "./components/pagination";
 import SingleRecipe  from "./components/singleRecipe";
+import './styles.css'; 
 
 import { useEffect, useState } from 'react';
 
@@ -79,16 +80,16 @@ const App = () => {
 
     if(Object.keys(currentRecipe).length === 0){
         return (
-            <body>
-                <input type="button" value="New recipe" onClick={newRecipe}></input>
+            <body class="container">
                 <Filter loading={loading} updateFilters={updateFilters}></Filter>
                 <ItemContainer recipes={recipes} loading={loading} selectRecipe={selectRecipe}></ItemContainer>
+                <input class="btn" type="button" value="New recipe" onClick={newRecipe}></input>
                 <Pagination currentPage={currentPage} noPages={noPages} changePage={setCurrentPage}></Pagination>
             </body>
         );
     } else {
         return (
-            <body className="container mt-5">
+            <body class="container">
                 <SingleRecipe recipe={currentRecipe} returnFromSingleRecipeView={setCurrentRecipe}/>
             </body>
         );
